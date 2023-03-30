@@ -10,8 +10,8 @@ import Avatar from "@mui/material/Avatar";
 import Button from "@mui/material/Button";
 import Tooltip from "@mui/material/Tooltip";
 import MenuItem from "@mui/material/MenuItem";
-// import MenuIcon from "@mui/icons-material/Menu";
-// import AdbIcon from "@mui/icons-material/Adb";
+import profile from "../assets/images/image-avatar.png";
+import StoreIcon from '@mui/icons-material/Store';
 import Badge from "@mui/material/Badge";
 import ShoppingCartIcon from "@mui/icons-material/ShoppingCart";
 
@@ -51,6 +51,26 @@ function Navbar() {
             SNEAKERS
           </Typography>
 
+          <StoreIcon sx={{ display: { xs: 'flex', md: 'none' }, mr: 1 }} />
+          <Typography
+            variant="h5"
+            noWrap
+            component="a"
+            href=""
+            sx={{
+              mr: 2,
+              display: { xs: 'flex', md: 'none' },
+              flexGrow: 1,
+              fontFamily: 'monospace',
+              fontWeight: 700,
+              letterSpacing: '.3rem',
+              color: 'inherit',
+              textDecoration: 'none',
+            }}
+          >
+            SNEAKERS
+          </Typography>
+
           <Box sx={{ flexGrow: 1, display: { xs: "none", md: "flex" } }}>
             {pages.map((page) => (
               <Button
@@ -80,7 +100,7 @@ function Navbar() {
             </IconButton>
             <Tooltip title="Open settings">
               <IconButton onClick={handleOpenUserMenu} sx={{ p: 0 }}>
-                <Avatar alt="Remy Sharp" src="./images/image-avatar.png" />
+                <Avatar alt="shailesh" src={profile} />
               </IconButton>
             </Tooltip>
             <Menu
