@@ -24,6 +24,7 @@ const Item = styled("div")({
 let images = [image1, image2, image3, image4];
 
 export default function Home() {
+  const [selectImg, setSelectImg] = React.useState(0);
   return (
     <Box sx={{ flexGrow: 1, pt: 5 }}>
       <Grid
@@ -35,17 +36,44 @@ export default function Home() {
         <Grid item xs={6} sm={4}>
           <Box sx={{ m: 1 }}>
             <Stack>
-              <img src={image1} alt="" width="100%" />
+              <img src={images[selectImg]} alt="" width="100%" />
             </Stack>
             <Stack
               direction={{ xs: "row", sm: "row" }}
               spacing={{ xs: 1, sm: 2, md: 1 }}
             >
-              {images.map((imge) => (
-                <Item key={imge}>
-                  <img src={imge} alt="my" width="100%" />
-                </Item>
-              ))}
+              <Item>
+                <img
+                  src={images[0]}
+                  alt="my"
+                  width="100%"
+                  onClick={(e) => setSelectImg(0)}
+                />
+              </Item>
+              <Item>
+                <img
+                  src={images[1]}
+                  alt="my"
+                  width="100%"
+                  onClick={(e) => setSelectImg(1)}
+                />
+              </Item>
+              <Item>
+                <img
+                  src={images[2]}
+                  alt="my"
+                  width="100%"
+                  onClick={(e) => setSelectImg(2)}
+                />
+              </Item>
+              <Item>
+                <img
+                  src={images[3]}
+                  alt="my"
+                  width="100%"
+                  onClick={(e) => setSelectImg(3)}
+                />
+              </Item>
             </Stack>
           </Box>
         </Grid>

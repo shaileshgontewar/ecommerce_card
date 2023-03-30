@@ -19,17 +19,11 @@ const pages = ["Collection", "Men", "Women", "About", "Contect"];
 const settings = ["Profile", "Account", "Dashboard", "Logout"];
 
 function Navbar() {
-  const [anchorElNav, setAnchorElNav] = React.useState(null);
-  const [anchorElUser, setAnchorElUser] = React.useState(null);
 
+  const [anchorElUser, setAnchorElUser] = React.useState(null);
   const handleOpenUserMenu = (event) => {
     setAnchorElUser(event.currentTarget);
   };
-
-  const handleCloseNavMenu = () => {
-    setAnchorElNav(null);
-  };
-
   const handleCloseUserMenu = () => {
     setAnchorElUser(null);
   };
@@ -61,7 +55,6 @@ function Navbar() {
             {pages.map((page) => (
               <Button
                 key={page}
-                onClick={handleCloseNavMenu}
                 sx={{
                   my: 2,
                   color: "#757575",
